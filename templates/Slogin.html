@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <figure  id="img" onmouseenter="mouseon()"  onmouseleave="mouseou()" >
+                <img src="{{ url_for('static', filename='images/logoimg.png') }}" alt="a" id="img">
+            </figure>
+        <div class="lo">
+            <div>
+            <p>Exams Center</p>
+            </div>
+        </div>
+        </div>
+        <article>
+            <div class="container">
+            <figure  id="img" onmouseenter="mouseon()"  onmouseleave="mouseou()" >
+                <img src="{{ url_for('static', filename='images/img.JPG') }}" alt="a" id="img">
+            </figure>
+            <form action="">
+                <div class="item">
+                    <label for="Email">Email:-</label>
+                    <input  id="Email" type="email" class="fouc" placeholder="Email">
+                    <div class="item">
+                        <label for="password">password:-</label>
+                        <input  id="password" type="password" class="fouc" placeholder="password">
+                    </div>
+                </div>
+                <section>
+                    <div class="right">
+                <div class="item">
+                    <button ><a href="{{ url_for('SExam')}}" class="special">Login</a></button>
+                <div class="left">
+                    <button ><a href="{{ url_for('Sign')}}" class="special">Sign Up</a></button>
+                </div>
+            </div>
+                    </div>
+
+            </form>
+    </header> 
+</body>
+</html>

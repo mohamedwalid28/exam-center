@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <figure  id="img" onmouseenter="mouseon()"  onmouseleave="mouseou()" >
+                <img src="{{ url_for('static', filename='images/logoimg.png') }}" alt="a" id="img">
+            </figure>
+        <div class="lo">
+            <div>
+            <p>Exams Center</p>
+            </div>
+        </div>
+        </div>
+    </header> 
+    <article>
+    <div class="container">
+    <figure  class="welcomepic" onmouseenter="mouseon()"  onmouseleave="mouseou()" >
+        <img src="{{ url_for('static', filename='images/welcom.JPG') }}" alt="a" id="img">
+    </figure>
+    <p><span>Are You...? </span> </p>
+    </div>
+    </article>
+    <section>
+        <div class="right">
+    <div class="item">
+        <button class="st" ><a href="{{ url_for('Dlogin')}}" class="special">Doctor</a></button>
+    <div class="left">
+        <button class="bb" ><a href="{{ url_for('Slogin')}}" class="special">Student</a></button>
+    </div>
+    {{doctors}}
+</div>
+        </div>
+        </div>
+</section>
+    
+</body>
+</html>

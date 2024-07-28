@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop-1</title>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/2.css') }}">
+</head>
+<body>
+    <section class="header">
+        <div class="navbar">
+          <div class="img"> <img src="../statics/images/logo (1).png" alt="logo"></div>
+          <div class="text"> <h3> Exams Center</h3></div>
+          <div class="logOut"><button>Log Out</button></div>
+        </div>
+
+    </section>
+    <section class="">
+        <div>
+        <p>Data Science</p>
+        </div>
+    </section>
+
+    <div class="card-container"></div>
+    <div class="button">
+        <button>create</button>
+    </div>
+
+    <script>
+        const cardContainer = document.querySelector('.card-container');
+
+        // Function to get the value of a URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Generate cards based on the question number from the URL parameter
+        const generateCards = () => {
+            // Clear previous cards
+            cardContainer.innerHTML = '';
+
+            // Get the question number from the URL
+            const questionNo = parseInt(getParameterByName('questionNo'), 10);
+
+            if (!isNaN(questionNo)) {
+                const cardData = [];
+
+                // Generate card data based on the entered questionNo
+                for (let i = 1; i <= questionNo; i++) {
+                    cardData.push({
+                        questionNo: i,
+                        questionid: `questionno ${i}`,
+                        question: `Question ${i}`,
+                        answer: `Questionuestion ${i} Answer`
+                    });
+                }
+
+                // Display the generated cards
+                cardData.forEach(postData => {
+                    const cardElement = document.createElement('div');
+                    cardElement.classList.add('card');
+                    cardElement.innerHTML = `
+                        <h3 class="card-heading">${postData.question}</h3>
+                        <input class="card-body" type="text" placeholder="${postData.question}">
+                        <input class="card-body" type="text" placeholder="${postData.answer}">
+                        <button class="card-button" id = "${questionid}">Apply</button>
+                    `;
+
+                    cardContainer.appendChild(cardElement);
+                });
+            } else {
+                alert('Invalid question number.');
+            }
+        }
+
+        // Call the generateCards function when the page loads
+        window.onload = generateCards;
+    </script>
+
+   
+</body>
+</html>

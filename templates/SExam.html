@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Exam Center</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <figure id="img" onmouseenter="mouseon()" onmouseleave="mouseou()">
+                <img src="{{ url_for('static', filename='images/logoimg.png') }}" alt="a" id="img">
+            </figure>
+            <div class="lo">
+                <div>
+                    <p>Exams Center</p>
+                    <div class="rightt">
+                        <div class="iteem">
+                            <button class="logout"><a href="{{ url_for('index')}}" class="special">Log Out</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="card-container">
+        {% for exam in exam_data %}
+            <div class="card">
+                <h3 class="card-heading">Exam Name: {{ exam.ExamName }}</h3>
+                <p class="card-body">Start Time: 9 AM, End Time: 10 AM</p>
+                <p class="card-body">Exam Made by:{{docname}}</p>
+                <!-- <p class="card-body">Start Time: {{ exam.start_time }}, End Time: {{ exam.end_time }}</p> -->
+                <button class = "card-button"><a href="{{ url_for('Dlogin', exam_id=exam.ExamID) }}" class="card-button">Apply</a></button>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

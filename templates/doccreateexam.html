@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/1.css') }}">
+    <title>create page1</title>
+</head>
+<body>
+    <section class="header">
+        <div class="navbar">
+          <div class="img"> <img src="../statics/images/logo (1).png" alt="logo"></div>
+          <div class="text"> <h3> Exams Center</h3></div>
+          <div class="logOut"><button><a href="{{ url_for('index')}}" class="special">Log Out</a></button></div>
+        </div>
+
+    </section>
+    <section class="">
+        <div>
+        <p>Creating Exam</p>
+        </div>
+    </section>
+
+
+    <section class="form">
+        <form>
+            <div class="examName">
+               <label for="name">Exam Name</label> <br>
+               <input  type="text" placeholder="" name="">
+            </div>
+            <div class="noQuistios"  id="noQuistios">
+               <div>
+                <label for="name">No.Questions</label> <br>
+                 <input type="number" id="questionNo" placeholder="Enter the number of questions">
+                </div>
+                <div class="nQApper">
+                    <label for=""  >No.Questions that apper</label > <br>
+                    <input  type="number" placeholder="1" name=""  id="noQuistios">
+                    </div>
+            </div>
+            <div class="time">
+                <div>
+                    <label for="startTime">Start Time</label> <br>
+                    <input  type="time" placeholder="09:00" name="">
+               </div>
+               <div class="endTime">
+                    <label for="endTime">End Time</label> <br>
+                    <input  type="time" placeholder= "09:30" name="">
+                </div>
+            </div>
+
+        </form>
+        <section class="button">
+           <!-- <input type="number" id="questionNo" placeholder="Enter the number of questions">-->
+            <button onclick="redirectToSecondPage()">Proceed</button>
+           </section>
+            <script>
+                function redirectToSecondPage() {
+                    const questionNo = document.getElementById('questionNo').value;
+                    if (!isNaN(questionNo) && questionNo > 0) {
+                        // Redirect to the second page with the entered question number
+                        window.location.href = `docinsertexams?questionNo=${questionNo}`;
+                    } else {
+                        alert('Please enter a valid number greater than 0.');
+                    }
+                }
+            </script>
+
+    </section>
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+img{
+    width: 60px;
+    height: 60px;
+ }
+.navbar{
+    height: 50px;
+    background-color: #98c4f1;
+    display: flex;
+    justify-content: space-between;
+}
+h3{
+    padding-top: 20px;
+    font-size: 20px;
+    font-family:sans-serif;
+    color: #ffffff;
+}
+button{
+    font-weight: bold;
+margin: 15px;
+background-color: #5498e4;
+border-radius: 8px;
+color: #fff;
+padding: 3px;
+width: 85px;
+border: none;
+}
+p{
+    font-family:sans-serif;
+    color: #5498e4;
+    font-size: 30px;
+    text-align: center;
+    padding: 35px;
+    padding-left: 15px;
+    font-weight: bolder;
+}
+.form{
+    padding-left: 250px;
+}
+label{
+    font-family:sans-serif;
+    color: #5498e4;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+input{
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 7px;
+    background-color: #98c4f1;
+    font-size: 18px;
+    border: none;
+    color: #ffffff;
+    
+
+}
+
+
+.Q1 .Answer1 input {
+    width: 300px;
+}
+.form button{
+    margin-left: 300px;
+    margin-top: 70px;
+}
+.form button{
+    background-color:#5498e4;
+    border-radius: 8px;
+    color: #fff;
+    width: 120px;
+    border: none;
+    width: 130px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+   
+}
+.button button{
+    background-color:#5498e4;
+    border-radius: 8px;
+    color: #fff;
+    width: 120px;
+    border: none;
+    width: 130px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 300px;
+    margin-top: 70px;
+}
